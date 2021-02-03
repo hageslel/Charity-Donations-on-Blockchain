@@ -2,7 +2,7 @@ pragma solidity ^0.5.0;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
 
-contract Donation_Portal is set_pcts {
+contract Donation_Portal {
   using SafeMath for uint256;
   
   address internal org_admin = msg.sender;
