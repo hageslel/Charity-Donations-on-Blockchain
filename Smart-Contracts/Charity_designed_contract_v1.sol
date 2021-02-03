@@ -2,7 +2,7 @@ pragma solidity ^0.5.0;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
 
-contract Donation_Portal {
+contract Donation_Portal is set_pcts {
   using SafeMath for uint256;
   
   address internal org_admin = msg.sender;
@@ -18,8 +18,12 @@ contract Donation_Portal {
   address payable operations;
   address payable taxes;
   
-  uint points;
-        
+  uint bd_1; 
+  uint bd_2; 
+  uint bd_3; 
+  uint bd_4; 
+  uint bd_5;
+  
   uint amnt_mis;
   uint amnt_inv;
   uint amnt_mar;
@@ -60,12 +64,13 @@ contract Donation_Portal {
         ) 
         public returns (uint, uint, uint, uint, uint) {
         require(msg.sender == org_admin);
-        require(_mission_pct + _invest_pct + _market_pct + _operate_pct + == 100, "The sum of all percentages MUST equal 100 to continue")
-        uint bd_1 = _mission_pct; 
-        uint bd_2 = _invest_pct; 
-        uint bd_3 = _market_pct; 
-        uint bd_4 = _operate_pct; 
-        uint bd_5 = _tax_pct;
+        
+        bd_1 = _mission_pct; 
+        bd_2 = _invest_pct; 
+        bd_3 = _market_pct; 
+        bd_4 = _operate_pct; 
+        bd_5 = _tax_pct;
+        require(_mission_pct + _invest_pct + _market_pct + _operate_pct + _tax_pct == 100, "The sum of all percentages MUST equal 100 to continue");
         return (bd_1, bd_2, bd_3, bd_4, bd_5);
     }
 
@@ -73,13 +78,13 @@ contract Donation_Portal {
         
         total_donation_balance = total_donation_balance.add(msg.value);
         
-        points = msg.value/100;
+        uint points = msg.value/100;
         
-        amnt_mis = points * 40;
-        amnt_inv = points * 15;
-        amnt_mar = points * 15;
-        amnt_ope = points * 15;
-        amnt_tax = points * 15;
+        amnt_mis = points * bd_1;
+        amnt_inv = points * bd_2;
+        amnt_mar = points * bd_3;
+        amnt_ope = points * bd_4;
+        amnt_tax = points * bd_5;
         
         mission.transfer(amnt_mis);
         investment.transfer(amnt_inv);
