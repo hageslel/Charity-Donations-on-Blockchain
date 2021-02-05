@@ -9,7 +9,7 @@ contract Donation_Portal {
   Counters.Counter donated;
 
   address internal org_admin = msg.sender;
-  uint public total_donation_balance;
+  uint public total_donations_received;
   uint public last_deposit_block;
   uint public last_deposit_amount;
   
@@ -78,7 +78,7 @@ contract Donation_Portal {
     
     function deposit() public payable {
         
-        total_donation_balance = total_donation_balance + msg.value;
+        total_donations_received = total_donations_received + msg.value;
         points = msg.value/100;
         
         amnt_mis = points * bd_1;
