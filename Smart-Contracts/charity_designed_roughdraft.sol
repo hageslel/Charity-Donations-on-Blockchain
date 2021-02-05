@@ -2,6 +2,9 @@ pragma solidity ^0.5.0;
 
 import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
 
+// This contract was written to more accurately track the division of donations made to charities in order to help increase transparency and accountability.
+// The main idea is to force specification reasons in withdrawal, requiring boolean true/false flags before withdrawals may be made.
+
 contract Donation_Portal {
   address payable org_admin;
   address payable wing_admin;
