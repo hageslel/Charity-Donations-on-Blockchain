@@ -1,35 +1,38 @@
 pragma solidity ^0.5.0;
 
-import "github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/math/SafeMath.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/drafts/Counters.sol";
+
 
 contract Donation_Portal {
-  using SafeMath for uint256;
-  
+    
+  using Counters for Counters.Counter;
+  Counters.Counter donated;
+
   address internal org_admin = msg.sender;
-  
   uint public total_donation_balance;
   uint public last_deposit_block;
   uint public last_deposit_amount;
-  address public last_to_deposit;
   
+  address public last_to_deposit;
   address payable mission;
   address payable investment;
   address payable marketing;
   address payable operations;
   address payable taxes;
   
-  uint bd_1; 
-  uint bd_2; 
-  uint bd_3; 
-  uint bd_4; 
+  uint bd_1;
+  uint bd_2;
+  uint bd_3;
+  uint bd_4;
   uint bd_5;
   
+  uint points;
   uint amnt_mis;
   uint amnt_inv;
   uint amnt_mar;
   uint amnt_ope;
   uint amnt_tax;
-
+  
   constructor(
       address payable _mission,
       address payable _investment,
@@ -43,18 +46,17 @@ contract Donation_Portal {
     operations = _operations;
     taxes = _taxes;
   }
+  
 
-
-// For this set up contract, I don't think we even need a withdraw function.
-// The money is just sent to the wallets directly, nothing is held in the function.
-//   function withdraw(uint wei_amount) public {
-//     require(msg.sender == org_admin || msg.sender == wing_admin, "You don't own this account!");
+      struct Data {
+        address donor;
+        uint count;
+    }
     
-//     last_withdraw_block = block.number;
-//     last_withdraw_amount = wei_amount;
+    mapping(uint => Data) data;
     
+    event Donation(uint donate, string report_uri);
     
-//   }
     function set_pcts(
         uint _mission_pct, 
         uint _invest_pct, 
@@ -63,7 +65,7 @@ contract Donation_Portal {
         uint _tax_pct
         ) 
         public returns (uint, uint, uint, uint, uint) {
-        require(msg.sender == org_admin);
+        require(msg.sender == org_admin, "Access Denied, you are not the appropriate owner");
         
         bd_1 = _mission_pct; 
         bd_2 = _invest_pct; 
@@ -73,12 +75,11 @@ contract Donation_Portal {
         require(_mission_pct + _invest_pct + _market_pct + _operate_pct + _tax_pct == 100, "The sum of all percentages MUST equal 100 to continue");
         return (bd_1, bd_2, bd_3, bd_4, bd_5);
     }
-
+    
     function deposit() public payable {
         
-        total_donation_balance = total_donation_balance.add(msg.value);
-        
-        uint points = msg.value/100;
+        total_donation_balance = total_donation_balance + msg.value;
+        points = msg.value/100;
         
         amnt_mis = points * bd_1;
         amnt_inv = points * bd_2;
@@ -95,13 +96,20 @@ contract Donation_Portal {
         last_to_deposit = msg.sender;
         last_deposit_amount = msg.value;
         last_deposit_block = block.number;
-    
     }
     
-//   function donation_breakdown() public {
-//       require(msg.sender == org_admin);
-      
-//   }
-
-  function() external payable {}
+    function() external payable {}
+    
+    function registerDonor(address donor) public returns(uint) {
+        donated.increment();
+        uint donate = donated.current();
+        data[donate] = Data(donor, 0);
+        return donate;
+    }
+    function reportDonation(uint donate, string memory report_uri) public returns(uint) {
+        data[donate].count += 1;
+        // Permanently associates the report_uri with the token_id on-chain via Events for a lower gas-cost than storing directly in the contract's storage.
+        emit Donation(donate, report_uri);
+        return data[donate].count;
+    }
 }
