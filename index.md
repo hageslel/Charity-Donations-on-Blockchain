@@ -14,7 +14,14 @@ The goal of this project was to leverage blockchain technology to create a strea
   
 Following this research, we identified an opportunity to improve potential shortfalls of fund utilization, which will help organizations gain trust with donors. 
 
-## 
+## Solutions: Smart Contracts
+
+- ENTER SMALL DETAIL ON CONTRACTS CREATED
+- OUTLINE DEMO GIF
+- PROVIDE ROPSTEN LINKS
+- MENTION HOW MORE DETAIL CAN BE FOUND IN CODE AND README OF GITHUB REPO
+
+
 ![Crowdsale Demo](crowdsaleDEMO.gif)
 
 You can use the [editor on GitHub](https://github.com/hageslel/Charity-Donations-on-Blockchain/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
