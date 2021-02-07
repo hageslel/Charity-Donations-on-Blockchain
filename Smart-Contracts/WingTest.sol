@@ -44,8 +44,6 @@ contract wing1 is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale {
         
     }
     
-// LEE: Adding Counters functionality to count donors and donations.
-// Seemingly need to change variable names or something to get things to automate.  
     using Counters for Counters.Counter;
     Counters.Counter token_ids;
     
@@ -58,10 +56,8 @@ contract wing1 is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale {
     // Only permanent data that you would need to use within the smart contract later should be stored on-chain
     mapping(uint => Detail) public detail;
     
-    // CAN I GET RID OF THE EVENT ALL TOGETHER? 
     // event Donation(uint count, string report_uri);
     
-    // I THINK I CAN GET RID OF THE STRING MEMORY TOKEN_URI?
 // , string memory token_uri
     function DonorInfo(address beneficiary, uint amount_donated, uint count) public payable returns(uint, uint) {
         amount_donated = msg.value;
