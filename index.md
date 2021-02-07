@@ -20,11 +20,15 @@ Following this research, we identified an opportunity to improve potential short
 - OUTLINE DEMO GIF
 - PROVIDE ROPSTEN LINKS
 - MENTION HOW MORE DETAIL CAN BE FOUND IN CODE AND README OF GITHUB REPO
+- POSSIBLY ADD CODE BLOCK SNIPIT IN MARKDOWN SECTION BELOW?
 
+
+
+
+You can use the [editor on GitHub](https://github.com/hageslel/Charity-Donations-on-Blockchain/edit/gh-pages/index.md) to maintain and preview the content for your website in 
+Markdown files.
 
 ![Crowdsale Demo](crowdsaleDEMO.gif)
-
-You can use the [editor on GitHub](https://github.com/hageslel/Charity-Donations-on-Blockchain/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
