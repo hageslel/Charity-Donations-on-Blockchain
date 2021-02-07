@@ -4,7 +4,7 @@ The goal of this project was to leverage blockchain technology to create a strea
 
 ### Research
 
-[Charity Navigator] (https://www.charitynavigator.org) was utilized to research charitable organizations and review organization ratings.  Numerous factors are considered when providing ratings, but the below outline provides a brief scope of the rankings:
+[Charity Navigator](https://www.charitynavigator.org) was utilized to research charitable organizations and review organization ratings.  Numerous factors are considered when providing ratings, but the below outline provides a brief scope of the rankings:
 
   - A ranking of 4 means that more than 75% of the money raised goes to the program
   - A ranking of 3 means 66% or more of the money raised goes to the program
