@@ -1,10 +1,10 @@
 ## Welcome to our Charity Donations Project GitHub Page!
 
-The goal of this project was to leverage blockchain technology to create a streamlined process for individuals to donate to desired founations.  By leveraging smart contracts donated funds can be tracked on the blockchain, providing visibility to donors of where their donations are being spent.  The grand scope of this project is to enhance donor contribution power and hold foundations accountable for their spending. 
+The goal of this project was to leverage blockchain technology to create a streamlined process for individuals to donate to desired foundations.  By leveraging smart contracts, donated funds can be tracked on the blockchain, providing visibility to donors of where their donations are being spent.  The grand scope of this project is to enhance donor contribution power and hold foundations accountable for their spending. 
 
 ### Research
 
-[Charity Navigator](https://www.charitynavigator.org) was utilized to research charitable organizations and review organization ratings.  Numerous factors are considered when providing ratings, but the below outline provides a brief scope of the rankings:
+[Charity Navigator](https://www.charitynavigator.org) was utilized to research charitable organizations and review organization ratings.  Numerous factors are considered when providing ratings, but the below outline provides a brief scope of the ratings:
 
   - A ranking of 4 means that more than 75% of the money raised goes to the program
   - A ranking of 3 means 66% or more of the money raised goes to the program
@@ -15,27 +15,21 @@ The goal of this project was to leverage blockchain technology to create a strea
 Following this research, we identified an opportunity to improve potential shortfalls of fund utilization, which will help organizations gain trust with donors. 
 
 ## Solutions: Smart Contracts
-Two contracts were created for this project - one to allow direct donations to a desired charity, and another to deploy a crowdsale for donors to participate in to support a charity. 
+Two contracts were created for this project - one to allow direct donations to a desired charity, and another to deploy a crowd sale for donors to participate in to support a charity. 
 
 The Donation_Portal contract accepts donations and distributes funds to set divisions within the charity.  Each division within the charity receives a percentage of each donation.  Percentages by division are defined when interacting with the contract.  An example of this contract in action is below.  
 
 ![Deposit Demo](depositCONTRACT.gif)
 
-The wingcoin_deployer contract deploys capped crowdsale and gives donors the ability to purchase WING tokens.  This contract was created as an alternative use case to accept donations and possibly provide donors a stake (token) in the charity following their donation.  The Donation_Portal contract is the primary contract to support the project initative. An example of interation with this contract can be found in Resources folder. 
+The wingcoin_deployer contract deploys a capped crowd sale and gives donors the ability to purchase WING tokens.  This contract was created as an alternative use case to accept donations and possibly provide donors a stake (token) in the charity following their donation.  The Donation_Portal contract is the primary contract to support the project initiative. An example of interaction with this contract can be found in Resources folder. 
 
 To enhance transparency and useability, a Python script was written to provide currency conversions.  This script accepts fiat currency codes (2 at a time) and outputs conversion rates of the top 10 cryptocurrencies.  The script assumes $1 inputs for each currency, with cryptocurrency conversions outputting accordingly.  An example of the script in action is below. 
 
 ![Currency Conversions](conversions_python2.gif)
 
+### Contract Code Example
 
-- PROVIDE ROPSTEN LINKS
-- MENTION HOW MORE DETAIL CAN BE FOUND IN CODE AND README OF GITHUB REPO
-- POSSIBLY ADD CODE BLOCK SNIPIT IN MARKDOWN SECTION BELOW?
-
-
-
-### 
-
+More detailed information about this project can be found in the in this project's repository, including full explanation of interaction with each smart contract.  For a visual aide of contract code, below is an example of some of the code that was used to generate and interact with the crowd sale contract. 
 ```
 pragma solidity >=0.4.22 <0.6.0;
 // import "./wingcoin.sol";
@@ -43,26 +37,6 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/CappedCrowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol";
-contract wing1 is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale {
-    constructor( 
-        uint rate,
-        wingcoin token, // token name
-        address payable wing_owner,
-        uint cap,
-        uint256 openingTime,
-        uint256 closingTime
-        )
-        
-        Crowdsale(rate, wing_owner, token)
-        CappedCrowdsale(cap)
-        TimedCrowdsale(openingTime, closingTime)
-        
-        public
-        
-    {
-        
-    }
-}
     
 contract wingcoin_deployer{
     address public token_sale_address;
@@ -85,29 +59,19 @@ contract wingcoin_deployer{
         token.renounceMinter();
     }
 }
-pragma solidity ^0.5.0;
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20Detailed.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20Mintable.sol";
-contract wingcoin is ERC20, ERC20Detailed, ERC20Mintable {
-    constructor(
-        string memory name,
-        string memory symbol,
-        uint initial_supply
-    )
-        ERC20Detailed(name, symbol, 18)
-        public
-    {
-        // constructor can stay empty
-    }
-}
+
 ```
 
+### Ropsten Test Network Deployment 
 
-### Jekyll Themes
+All contracts were deployed to the Ropsten test network to allow outside user interaction of the contracts.  The addresses for each contract are provided below.  Each can be viewed by visiting the [Ropsten Testnet Explorer](https://ropsten.etherscan.io/) on Etherscan.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hageslel/Charity-Donations-on-Blockchain/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+  - Donation_Portal: 0xB53cfb3F0ADA965eFeA53dd4Bc89416017924E10
+  - Wingcoin: 0x35f6179788F983e476E1Add22D504829aFE221db
+  - Wingcoin_Deployer: 0xE94535635Ebe26F18F6C732281807732e9e1131f
+  - Wing1: 0x2185e03D389d5D9BcC0573E15D2A0b3d3D6Db198
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### GitHub Repository
+
+The repository that hosts this project can be viewed [here](https://github.com/hageslel/Charity-Donations-on-Blockchain).  Enjoy our project!  
