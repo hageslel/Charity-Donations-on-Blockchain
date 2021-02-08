@@ -1,6 +1,6 @@
 ## Welcome to our Charity Donations Project GitHub Page!
 
-The goal of this project was to leverage blockchain technology to create a streamlined process for individuals to donate to desired founations.  By leveraging smart contracts donated funds can be tracked on the blockchain, providing visibility to donors of where their donations are being spent.  The grand scope of this project is to ultimately empower donors and hold foundations accountable for spending. 
+The goal of this project was to leverage blockchain technology to create a streamlined process for individuals to donate to desired founations.  By leveraging smart contracts donated funds can be tracked on the blockchain, providing visibility to donors of where their donations are being spent.  The grand scope of this project is to enhance donor contribution power and hold foundations accountable for their spending. 
 
 ### Research
 
@@ -15,6 +15,17 @@ The goal of this project was to leverage blockchain technology to create a strea
 Following this research, we identified an opportunity to improve potential shortfalls of fund utilization, which will help organizations gain trust with donors. 
 
 ## Solutions: Smart Contracts
+Two contracts were created for this project - one to allow direct donations to a desired charity, and another to deploy a crowdsale for donors to participate in to support a charity. 
+
+The Donation_Portal contract accepts donations and distributes funds to set divisions within the charity.  Each division within the charity receives a percentage of each donation.  Percentages by division are defined when interacting with the contract.  An example of this contract in action is below.  
+
+![Deposit Demo](depositCONTRACT.gif)
+
+The wingcoin_deployer contract deploys capped crowdsale and gives donors the ability to purchase WING tokens.  This contract was created as an alternative use case to accept donations and possibly provide donors a stake (token) in the charity following their donation.  The Donation_Portal contract is the primary contract to support the project initative. An example of interation with this contract can be found in Resources folder. 
+
+To enhance transparency and useability, a Python script was written to provide currency conversions.  This script accepts fiat currency codes (2 at a time) and outputs conversion rates of the top 10 cryptocurrencies.  The script assumes $1 inputs for each currency, with cryptocurrency conversions outputting accordingly.  An example of the script in action is below. 
+
+![Currency Conversions](conversions_python2.gif)
 
 - ENTER SMALL DETAIL ON CONTRACTS CREATED
 - OUTLINE DEMO GIF
