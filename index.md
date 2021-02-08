@@ -27,21 +27,12 @@ To enhance transparency and useability, a Python script was written to provide c
 
 ![Currency Conversions](conversions_python2.gif)
 
-- ENTER SMALL DETAIL ON CONTRACTS CREATED
-- OUTLINE DEMO GIF
+
 - PROVIDE ROPSTEN LINKS
 - MENTION HOW MORE DETAIL CAN BE FOUND IN CODE AND README OF GITHUB REPO
 - POSSIBLY ADD CODE BLOCK SNIPIT IN MARKDOWN SECTION BELOW?
 
 
-
-
-You can use the [editor on GitHub](https://github.com/hageslel/Charity-Donations-on-Blockchain/edit/gh-pages/index.md) to maintain and preview the content for your website in 
-Markdown files.
-
-![Crowdsale Demo](crowdsaleDEMO.gif)
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
@@ -50,16 +41,27 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ```markdown
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
+contract wingcoin_deployer{
+    address public token_sale_address;
+    address public token_address;
+    
+    constructor(
+        string memory name,
+        string memory symbol,
+        address payable wing_owner,
+        uint256 cap
+    ) public
+    {
+        wingcoin token = new wingcoin(name, symbol, 18);
+        token_address = address(token);
+        
+        wing1 token_sale = new wing1(1, token, wing_owner, cap, now, now + 45 days);
+        token_sale_address = address(token_sale);
+        
+        token.addMinter(token_sale_address);
+        token.renounceMinter();
+    }
 
 
 **Bold** and _Italic_ and `Code` text
@@ -67,7 +69,6 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
