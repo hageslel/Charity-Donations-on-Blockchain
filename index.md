@@ -21,6 +21,12 @@ The Donation_Portal contract accepts donations and distributes funds to set divi
 
 ![Deposit Demo](depositCONTRACT.gif)
 
+The wingcoin_deployer contract deploys capped crowdsale and gives donors the ability to purchase WING tokens.  This contract was created as an alternative use case to accept donations and possibly provide donors a stake (token) in the charity following their donation.  The Donation_Portal contract is the primary contract to support the project initative. An example of interation with this contract can be found in Resources folder. 
+
+To enhance transparency and useability, a Python script was written to provide currency conversions.  This script accepts fiat currency codes (2 at a time) and outputs conversion rates of the top 10 cryptocurrencies.  The script assumes $1 inputs for each currency, with cryptocurrency conversions outputting accordingly.  An example of the script in action is below. 
+
+![Currency Conversions](conversions_python2.gif)
+
 - ENTER SMALL DETAIL ON CONTRACTS CREATED
 - OUTLINE DEMO GIF
 - PROVIDE ROPSTEN LINKS
