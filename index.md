@@ -1,6 +1,6 @@
 ## Welcome to our Charity Donations Project GitHub Page!
 
-The goal of this project was to leverage blockchain technology to create a streamlined process for individuals to donate to desired founations.  By leveraging smart contracts donated funds can be tracked on the blockchain, providing visibility to donors of where their donations are being spent.  The grand scope of this project is to ultimately empower donors and hold foundations accountable for spending. 
+The goal of this project was to leverage blockchain technology to create a streamlined process for individuals to donate to desired founations.  By leveraging smart contracts donated funds can be tracked on the blockchain, providing visibility to donors of where their donations are being spent.  The grand scope of this project is to enhance donor contribution power and hold foundations accountable for their spending. 
 
 ### Research
 
@@ -15,6 +15,11 @@ The goal of this project was to leverage blockchain technology to create a strea
 Following this research, we identified an opportunity to improve potential shortfalls of fund utilization, which will help organizations gain trust with donors. 
 
 ## Solutions: Smart Contracts
+Two contracts were created for this project - one to allow direct donations to a desired charity, and another to deploy a crowdsale for donors to participate in to support a charity. 
+
+The Donation_Portal contract accepts donations and distributes funds to set divisions within the charity.  Each division within the charity receives a percentage of each donation.  Percentages by division are defined when interacting with the contract.  An example of this contract in action is below.  
+
+![Deposit Demo](depositCONTRACT.gif)
 
 - ENTER SMALL DETAIL ON CONTRACTS CREATED
 - OUTLINE DEMO GIF
