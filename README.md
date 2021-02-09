@@ -37,7 +37,7 @@ Included within the contract now, there are functions which will be implemented 
 
 This contract is a different approach to the donation purposes. It has a cap on the maximum value that can be taken as donations and as well as a time limit on the donation acceptance.
 
-**How this contract makes a difference:
+**How this contract makes a difference:**
 
 1. The cap on the maximum amount that can be raised can be changed as per requirement of the project.
 
