@@ -18,7 +18,7 @@ The set up for this contract was conceptualized to provide donation breakdown po
 
 ![Donation_deployment](Images/Donation_deployment.png) ![donation_constructor.png](Images/donation_constructor.png) 
 
-Once the contract has been deployed, the owner can enumerate how a standard donation will be allocated between the wallets. Currently only integer percentages are accepted and the sum of the breakdown percentages must equal 100 otherwise the transaction fails. Using uint values protect the contracts from integer underflow attacks, while instantaneous deposits prevent re-entrancy attacks.
+Once the contract has been deployed, the owner can enumerate how a standard donation will be allocated between the wallets. Currently only integer percentages are accepted, and the sum of the breakdown percentages must equal 100 otherwise the transaction fails. Using uint values protect the contracts from integer underflow attacks, while instantaneous deposits prevent re-entrancy attacks.
 
 ![set_pcts_deploy](Images/set_pcts_deploy.png) ![function_set_pcts](Images/set_pcts_function.png)
 
