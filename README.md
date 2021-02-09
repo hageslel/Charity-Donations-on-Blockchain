@@ -61,7 +61,7 @@ This contract is a different approach to the donation purposes. It has a cap on 
 
 ![Coin Deployer](Images/deployer-deploy-remix.PNG)
 
-**Metamask confirmation:**
+Metamask confirmation:
 
 ![Metamask transaction confirmation for deployment](Images/deployer-deploy-metamask.PNG)
 
