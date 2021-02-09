@@ -5,17 +5,15 @@
 ![Money Photo](Images/money.PNG)
 
 ### Introduction 
-Organizations such as charities raise money for a purpose but tracking their expenses is another story. Through Charitynavigator's API we were able to ingest data from thousands of IRS good standing organizations with its rankings based on a charity's financial health and the charity's Accountability & Transparency. What the database doesn't include is the thousands of organizations claiming to be a charity but is under investigation by the IRS. These organizations cause a lack of trust for donors, making fundraising so much harder for good standing charities.
+Organizations such as charities raise money for a purpose, but tracking their expenses is another story. Through Charity Navigator's API we were able to ingest data from thousands of IRS good standing organizations, which have been rated based on the given charity's financial health, accountability, and transparency indices. However, what the database does not include is the thousands of organizations claiming to be a charity, but are currently under investigation by the IRS. These organizations induce a lack of trust for donors, making fundraising much harder for good standing charities.
 
-In our current reality, chunks of fundraised donations will be used to pay operating and processing fees for middlemen. We envision a way for donations raised to be invested directly to the causes that matter most to the people. Improving financing efficiencies whether it be for a charitable cause, aiding world disaster, alleviate global poverty, and much more. Blockchain records will securely keep public transactions made by the party recipient with the funds raised. Using smart contracts, funds will only be used for the causes they contribute. By using blockchain, we devise methods of lowering transaction & taxation fees when donating to a cause, develop smart contracts to enforce funding terms, and ensure less there is less money to middlemen and more money for the campaign. 
+In our current reality, chunks of fundraised donations will be used to pay operating and processing fees for middlemen. We envision a way for donations raised to be invested directly to the causes that matter most to the people, whether it be a charitable cause, aiding world disaster, alleviating global poverty, or much more. The use of blockchain and smart contracts will provide traceability and accountability, ensuring funds raised will only be used for the cause in which they contributed. Additionally, by using blockchain we devise methods of lowering donation transaction and taxation fees, as well as enforcing terms outlined in smart contracts with each donation.  This ensures more funds are provided directly to a campaign, rather than funding a middleman.
 
-Our solution to this problem, helping organizations gain trust with donors was to create a platform where a charity can create fundraising, clearly stating its intent and project scope, openly share the budget allocation including each recipient's wallet, create a crowdfunding campaign and deploy it. Our hope is to give more power to individuals donating by the ability to see where funding is spent, giving a more direct and personal connection via their contributions and the collective causes that matter the most to them.
-
-
+Our solution to this donor/organization trust problem was to create a platform where a charity can: create fundraising clearly stating its intent and project scope, openly share the budget allocation (including each recipient's wallet), and create and deploy a crowdfunding campaign. Our hope is to give more power to individuals donating via the ability to see where funding is spent.  This will in turn give donors a more direct and personal connection to their contributions and the collective causes that matter the most to them.
 
 ## Institution Designed Donation Contract
 
-#### Current functionality Overview
+#### Current Functionality Overview
 The set up for this contract was conceptualized to provide donation breakdown power to the recipient. As such, once deployed, it facilitates the division and simultaneous transfer of any donations made to the target. This contract is meant for organizations with healthy reputations, to be used by unconcerned donors who trust the institution to use the donations in the most effective manner. The current format of the contract allows for the deploying wallet owner to set up to five recipient wallet addresses to receive donations. There is no logic in place to prevent the same wallet being used for each field.
 
 ![Donation_deployment](Images/Donation_deployment.png) ![donation_constructor.png](Images/donation_constructor.png) 
@@ -34,13 +32,12 @@ Included within the contract now, there are functions which will be implemented 
 ![future_implementors.png](Images/future_implementors.png)
 
 
-
-### Crowdfunding contract: Payment Per Project
+### Crowdfunding Contract: Payment Per Project
 #### Overview and Deployment Instructions
 
 This contract is a different approach to the donation purposes. It has a cap on the maximum value that can be taken as donations and as well as a time limit on the donation acceptance.
 
-How this contract makes a difference:
+**How this contract makes a difference:
 
 1. The cap on the maximum amount that can be raised can be changed as per requirement of the project.
 
